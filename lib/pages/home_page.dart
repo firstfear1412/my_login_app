@@ -15,16 +15,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey[850],
         actions: [
           IconButton(
             onPressed: signUserOut,
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
           )
         ],
       ),
       body: Center(child: Text(
         "LOGGED IN AS : " + user.email!,
-        style: TextStyle(fontSize: 20))),
+        style: const TextStyle(fontSize: 20))),
     );
   }
 }

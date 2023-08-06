@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_login_app/components/my_button.dart';
 import 'package:my_login_app/components/my_textfield.dart';
 import 'package:my_login_app/components/square_tile.dart';
+import 'package:my_login_app/services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   final Function()? onTap;
@@ -184,14 +185,18 @@ class _LoginPageState extends State<LoginPage> {
                   //sign in button
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       //google
-                      SquareTile(imagePath: 'lib/images/google.png'),
+                      SquareTile(
+                        onTap:() => AuthService().signInWithGoogle(),
+                        imagePath: 'lib/images/google.png'),
 
-                      SizedBox(width: 25),
+                      const SizedBox(width: 25),
 
                       //apple
-                      SquareTile(imagePath: 'lib/images/apple.png')
+                      SquareTile(
+                        onTap: () {},
+                        imagePath: 'lib/images/apple.png')
                     ],
                   ),
                   const SizedBox(height: 50),
